@@ -1,0 +1,112 @@
+:root {
+    /* gradientes */
+
+    --gradiente-background: linear-gradient(90deg, rgba(2,80,96,1) 100%, rgba(12,36,57,1) 100%);
+    --gradiente-btn: linear-gradient(90deg, rgba(0,203,255,1) 35%, rgba(30,191,116,1) 35%);
+    --gradiente-icon: linear-gradient(90deg, rgba(4,84,109,1) 67%, rgba(32,171,128,1) 67%);
+    --gradiente-padrao: linear-gradient(90deg, rgba(32,171,162,1) 0%, rgba(2,80,96,1) 0%);
+
+    /* fontes */
+    --fonte-padrao: rgba(140,156,181,1);
+    --fonte-positivo: rgba(83,197,148,1);
+    --fonte-negativo: rgba(255,133,133,1);
+     --fonte-padrao-dark: rgba(78,98,129,1);
+
+     /* fonte Padrão: Segoe UI
+     Padrão valores: Segoe UI Bold
+     Padrão descrições: Segoe UI Semibold */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:'Segoe UI',  Arial, sans-serif;
+}
+.container {
+    display: flex;
+    border: 2px solid red;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: wheat;
+}
+.content {
+    border-radius: 15px;
+    background-color: #fff;
+    width: 80%;
+    height: 50%;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+
+}
+.content::before {
+content: "";
+position: absolute;
+background: var(--gradiente-background);
+width: 40%;
+height: 100%;
+}
+
+.first-column {
+    text-align: center;
+    flex: 1 0 auto;
+    z-index: 10;
+}
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.title-welcome {
+    color: var(--fonte-padrao);
+    /* brand abaixo */
+}
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 30px;
+}
+.btn {
+    border-radius:15px ;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+
+}
+.btn-primary {
+    background-color: transparent;
+    border:1px solid #fff ;
+}
+.btn-primary:hover {
+    background-color: #fff;
+    color: #58af58
+}
+.second-column {
+    flex: 2 0 auto;
+}
+
+.first-content {
+    display: flex   ;
+}
+
+.list-social-media {
+    display: flex;
+    
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.second-content {
+    position: absolute;
+    display: none;
+}
