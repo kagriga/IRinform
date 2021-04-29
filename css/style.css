@@ -22,21 +22,25 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+body, html {
     font-family:'Segoe UI',  Arial, sans-serif;
+    background-image: url('../images/bd.jpg.jpg');
 }
+/* --------------- container total -------------------------- */
 .container {
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: wheat;
+    
+    
+  /* --------------------------- content -------------------- */  
 }
 .content {
-    border-radius: 15px;
     background-color: #fff;
-    width: 80%;
+    border-radius: 15px;
+    width: 960px;
     height: 50%;
     justify-content:space-between;
     align-items: center;
@@ -49,64 +53,205 @@ position: absolute;
 background: var(--gradiente-background);
 width: 40%;
 height: 100%;
-}
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
 
+/* left: 60%; */
+
+left: 0;
+}
+/* -------------------------- primeiro content -------------------- */
+.first-content {
+    display: flex;
+    
+}
+.first-content .second-column {
+    z-index: 11;
+}
+/* ------------------------- segundo content --------------------- */
+.second-content {
+    position: absolute;
+    display: flex;
+}
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+.password {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+
+}
+.password::first-letter {
+    text-transform: capitalize;
+    
+}
+/* ------------------------ COLUNAS ------------------------------- */
 .first-column {
     text-align: center;
-    flex: 1 0 auto;
+    width: 40%;
     z-index: 10;
 }
+.second-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+/* ------------------------ TITULOS ------------------------ */
 .title {
     font-size: 28px;
     font-weight: bold;
     text-transform: capitalize;
 }
-.title-welcome {
-    color: var(--fonte-padrao);
+.title-primary {
+    color: #fff;
     /* brand abaixo */
 }
+.title-second {
+ color: var(--fonte-padrao);
+}
+/* ---------------------DESCRIÇÃO ----------------------------- */
 .description {
     font-size: 14px;
     font-weight: 300;
-    color: #fff;
     line-height: 30px;
 }
+.description-primary {
+    color: var(--fonte-padrao);
+}
+.description-second {
+    color:var(--fonte-padrao-dark); 
+}
+/* ----------------------- FORM ------------------------- */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    
+}
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: lightgray;
+    
+    
+}
+.label-input {
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+
+}
+.icon-modify {
+    color: #7f8c8d;
+    padding: 0 5px;
+}
+/* ------------------------ BOTÃO ------------------------- */
 .btn {
     border-radius:15px ;
     text-transform: uppercase;
-    color: #fff;
+    color: gray;
     font-size: 10px;
     padding: 10px 50px;
     cursor: pointer;
+    font-weight: bold;
+    width:150px ;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
 
 }
 .btn-primary {
     background-color: transparent;
     border:1px solid #fff ;
+    transition: background-color 1s;
+
 }
 .btn-primary:hover {
     background-color: #fff;
-    color: #58af58
+    color: #58af9B
 }
-.second-column {
-    flex: 2 0 auto;
+.btn-second {
+    background-color: #58af9b;
+    border: 1px solid #58af9b;
+    transition: background-color 1s;
 }
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #58af9b;
+    color: #58af9b;
+}
+/* ----------------------------social media-------------------------------- */
 
-.first-content {
-    display: flex   ;
+.social-media {
+    margin: 1rem 0;
 }
-
 .list-social-media {
     display: flex;
+    list-style-type: none;   
+}
+.link-social-media:hover .item-social-media {
+background-color: #58af9b;
+color: #fff;
+border: #58af9b;
+
+}
+.link-social-media:not(:first-child) {
+    margin-left: 10px;
+}
+
+.item-social-media {
+    border: 1px solid #bdc3c7;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #95a5a6; 
+}
+.link-social-media .item-social-media {
+    transition: background-color .5s;
+
+}
+/* -------------------------- SIGN-IN JAVASCRIPT ------------------------- */
+.sign-in-js .first-content .first-column,
+.sign-in-js .first-content .second-column {
+    z-index: -1
+}
+
+.sign-in-js .second-content .first-column,
+.sign-in-js .second-content .second-column {
+    z-index: 11;
+}
+
+.sign-in-js .content::before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
+/* -----------------------SING-UP JAVASCRIPT ---------------------------- */
+
+.sing-up-js .second-content .first-column,
+.sing-up-js .second-content .second-column {
+z-index: -1;
+}
+.sing-up-js .first-content .first-column,
+.sing-up-js .first-content .second-column {
+    z-index: 11;
 }
 
-.second-content {
-    position: absolute;
-    display: none;
-}
+
